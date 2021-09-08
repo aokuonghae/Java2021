@@ -13,7 +13,11 @@ public class CountingCharacters {
         testStr = testStr.replaceAll("\\s", "");
         HashMap<Character, Integer> charCounts = new HashMap<>();
 
-        System.out.println(countOccurences(charCounts,testStr,0));
+        charCounts= (countOccurences(charCounts,testStr,0));
+        for (Map.Entry<Character, Integer> oneChar : charCounts.entrySet()) {
+            System.out.println(oneChar.getKey() + ": " + oneChar.getValue());
+        }
+
     }
 
     //Let's use Recursion!
