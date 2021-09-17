@@ -16,7 +16,9 @@ public class CreateMenu {
         return myMenu;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
+
         MenuItem mixedCheese = new MenuItem("Mixed Cheese", 7.00 , "It's a pizza, what else do you need?", "Pizza", false);
         MenuItem pepperoni = new MenuItem("Full Of pepperoni", 10.00 , "Mozarella, Pepperoni", "Pizza", false);
         MenuItem bbqChicken = new MenuItem("BBQ Chicken", 10.00 , "House BBQ, Mozarella, Caramelized Onion, Cilantro", "Pizza", true);
@@ -26,10 +28,22 @@ public class CreateMenu {
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date date= Calendar.getInstance().getTime();
-        ArrayList<MenuItem> myItems= new ArrayList<MenuItem>();
-        myItems = addItems(mixedCheese,pepperoni,bbqChicken,grilledChickenCaesar,haasAvocadoToast);
+        ArrayList<MenuItem> myItems= addItems(mixedCheese,pepperoni,bbqChicken,grilledChickenCaesar,haasAvocadoToast);
 
         Menu myMenu= new Menu(date, myItems);
+        MenuItem totallyNewPepperoni = new MenuItem("Full Of pepperoni", 10.00 , "Mozarella, Pepperoni", "Pizza", false);
+        System.out.println(myMenu.getLastUpdated());
+//        Thread.sleep(5000);
+        myMenu.addItem(totallyNewPepperoni);
+//        System.out.println(myMenu.getItems());
+//        System.out.println(myItems.get(0));
+//        System.out.println(myItems.get(5).getName());
+        myMenu.removeItem(grilledChickenCaesar);
+//        System.out.println(myMenu.getLastUpdated());
+//        System.out.println(myItems.get(3).getName());
+        myMenu.printItem(haasAvocadoToast);
+        myMenu.printMenu();
+
 
     }
 

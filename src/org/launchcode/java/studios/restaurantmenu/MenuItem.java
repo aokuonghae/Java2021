@@ -39,4 +39,30 @@ public class MenuItem {
         isNew = aNew;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public String isItemNew(){
+        String info;
+        if (this.isNew){
+            info = "This item is new";
+        } else {
+            info= "This item is not new";
+        }
+        return info;
+    }
+
 }
